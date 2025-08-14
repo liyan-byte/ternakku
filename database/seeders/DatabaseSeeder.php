@@ -2,22 +2,38 @@
 
 namespace Database\Seeders;
 
-use App\Models\User;
-// use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use App\Models\Ternak;
+use App\Models\Pakan;
 
 class DatabaseSeeder extends Seeder
 {
-    /**
-     * Seed the application's database.
-     */
     public function run(): void
     {
-        // User::factory(10)->create();
+        Ternak::create([
+            'kode_ternak' => 'T001',
+            'jenis' => 'Kambing',
+            'ras' => 'Etawa',
+            'umur' => 4,
+            'berat' => 30.5,
+            'status_kesehatan' => 'Sehat',
+            'status_reproduksi' => 'Belum Kawin',
+        ]);
 
-        User::factory()->create([
-            'name' => 'Test User',
-            'email' => 'test@example.com',
+        Ternak::create([
+            'kode_ternak' => 'T002',
+            'jenis' => 'Sapi',
+            'ras' => 'Simental',
+            'umur' => 12,
+            'berat' => 250.0,
+            'status_kesehatan' => 'Sakit',
+            'status_reproduksi' => 'Sedang Hamil',
+        ]);
+
+        Pakan::create([
+            'nama_pakan' => 'Rumput Segar',
+            'stok_kg' => 70,
+            'harga_per_kg' => 1500,
         ]);
     }
 }
